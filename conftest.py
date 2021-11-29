@@ -33,7 +33,7 @@ def user_data(request):
     return LoginData(user, password)
 
 
-@pytest.fixture()
+@pytest.fixture(scope="session")
 def app(request):
     url = request.config.getoption("--url")
     driver = webdriver.Chrome(ChromeDriverManager().install())
