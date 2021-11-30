@@ -2,6 +2,7 @@ import logging
 
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
 from fixtures.models.login import LoginData
@@ -36,6 +37,10 @@ def user_data(request):
 @pytest.fixture(scope="session")
 def app(request):
     url = request.config.getoption("--url")
+    """Driver's option"""
+    chrome_options = Options()
+    chrome_options.headless = True
+
     driver = webdriver.Chrome(ChromeDriverManager().install())
     logger.info(f"Start app on {url}")
     app = Application(driver, url)
