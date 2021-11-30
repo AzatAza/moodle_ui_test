@@ -1,0 +1,15 @@
+language: Python
+python: 3.9
+
+addons:
+  crome: stable
+
+#before install:
+  #- pip install pre-commit
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  # - pre-commit run --all-files
+  - pytest
