@@ -1,7 +1,6 @@
 name: Python application
 
 on:
-  """starts test after every push or PR"""
   push:
     branches: [ study ]
   pull_request:
