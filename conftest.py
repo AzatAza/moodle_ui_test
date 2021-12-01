@@ -41,7 +41,7 @@ def app(request):
     chrome_options = Options()
     chrome_options.headless = True
 
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver = webdriver.Chrome()
     logger.info(f"Start app on {url}")
     app = Application(driver, url)
     yield app
