@@ -1,4 +1,4 @@
 class Constants:
-    LOGIN_ERROR_MESSAGE = 'Invalid login, please try again'
-    FIRSTNAME_ERROR_MESSAGE = '- Missing given name'
+    LOGIN_ERROR_MESSAGE = 'Неверный логин или пароль, попробуйте заново'
+    FIRSTNAME_ERROR_MESSAGE = '- Заполните поле'
 
