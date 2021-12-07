@@ -25,6 +25,13 @@ def pytest_addoption(parser):
     parser.addoption(
         "--password", action="store", default="Password11!", help="Password",
     ),
+    parser.addoption(
+        "--headless",
+        action="store",
+        default="false",
+        help="enter 'true' if you want run tests in headless mode of browser,\n"
+        "enter 'false' - if not",
+    ),
 
 
 @pytest.fixture(scope="session")
