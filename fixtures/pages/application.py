@@ -18,4 +18,3 @@ class Application:
 
     def open_register_page(self):
         self.driver.get('https://qacoursemoodle.innopolis.university/login/signup.php?')
-

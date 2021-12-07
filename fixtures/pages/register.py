@@ -1,6 +1,5 @@
 import logging
 from fixtures.locators.register import RegisterLocators
-from fixtures.models.login import LoginData
 from fixtures.models.register import RegisterData
 from fixtures.pages.base_page import BasePage
 
@@ -25,16 +24,35 @@ class RegisterPage(BasePage):
             self.click_element(locator=RegisterLocators.LOGIN_BTN)
 
     def get_name_error(self) -> str:
-        return self.get_text(locator=RegisterLocators.ERROR_FIRSTNAME)
-    # def auth(self, data: LoginData, is_submit: bool = True):
-    #     """
-    #     Auth func
-    #     Если мы не login  → login
-    #     Если мы login → logout → login
-    #     """
-    #     logger.info(f"Login with user {data.login} and password {data.password}")
-    #     self.fill_element(data=data., locator=LoginLocators.)
-    #     self.fill_element(data=data.password, locator=LoginLocators.PASSWORD_INPUT)
-    #     if is_submit:
-    #         self.click_element(locator=LoginLocators.LOGIN_BTN)
-    #
+        try:
+            if self.get_text(locator=RegisterLocators.ERROR_USERNAME) != '':
+                return self.get_text(locator=RegisterLocators.ERROR_USERNAME)
+            if self.get_text(locator=RegisterLocators.ERROR_USERNAME) != '':
+                return self.get_text(locator=RegisterLocators.ERROR_USERNAME)
+            if self.get_text(locator=RegisterLocators.ERROR_PASSWORD) != '':
+                return self.get_text(locator=RegisterLocators.ERROR_PASSWORD)
+            if self.get_text(locator=RegisterLocators.ERROR_EMAIL) != '':
+                return self.get_text(locator=RegisterLocators.ERROR_EMAIL)
+            if self.get_text(locator=RegisterLocators.ERROR_EMAIL2) != '':
+                return self.get_text(locator=RegisterLocators.ERROR_EMAIL2)
+            if self.get_text(locator=RegisterLocators.ERROR_FIRSTNAME) != '':
+                return self.get_text(locator=RegisterLocators.ERROR_FIRSTNAME)
+            if self.get_text(locator=RegisterLocators.ERROR_LASTNAME) != '':
+                return self.get_text(locator=RegisterLocators.ERROR_LASTNAME)
+        except BaseException:
+            return "Something went wrong in getting error text"
+
+    def get_password_error(self):
+        try:
+            if self.is_element_present(locator=RegisterLocators.PASSWORD_LESS_THAN_8):
+                return True
+            if self.is_element_present(locator=RegisterLocators.PASSWORD_NOT_A_DIGIT):
+                return True
+            if self.is_element_present(locator=RegisterLocators.PASSWORD_NOT_LOWERCASE):
+                return True
+            if self.is_element_present(locator=RegisterLocators.PASSWORD_NOT_UPPERCASE):
+                return True
+            if self.is_element_present(locator=RegisterLocators.PASSWORD_NOT_A_SPEC_SYMBOL):
+                return True
+        except BaseException:
+            return "Something went wrong in getting error text"

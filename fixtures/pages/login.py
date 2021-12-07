@@ -14,10 +14,6 @@ class LoginPage(BasePage):
         Если мы login → logout → login
         """
 
-        # if not self.get_element(locator=LoginLocators.LOGIN_BTN):
-        #     self.click_element(locator=LoginLocators.LOGOUT_BTN)
-        #     self.click_element(locator=LoginLocators.LOGIN_ENTER)
-
         logger.info(f"Login with user {data.login} and password {data.password}")
         self.fill_element(data=data.login, locator=LoginLocators.LOGIN_INPUT)
         self.fill_element(data=data.password, locator=LoginLocators.PASSWORD_INPUT)

@@ -34,14 +34,18 @@ def user_data(request):
     return LoginData(user, password)
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture()
 def app(request):
     url = request.config.getoption("--url")
-    """Driver's option"""
-    chrome_options = Options()
-    chrome_options.headless = True
+    headless = request.config.getoption("--headless")
 
-    driver = webdriver.Chrome(options=chrome_options)
+    # Driver's options
+    chrome_options = Options()
+    if headless == "false":
+        chrome_options.headless = False
+    else:
+        chrome_options.headless = True
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
     logger.info(f"Start app on {url}")
     app = Application(driver, url)
     yield app

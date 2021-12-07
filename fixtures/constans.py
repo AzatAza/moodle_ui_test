@@ -1,4 +1,13 @@
 class Constants:
-    LOGIN_ERROR_MESSAGE = 'Неверный логин или пароль, попробуйте заново.'
-    FIRSTNAME_ERROR_MESSAGE = '- Заполните поле'
-
+    LOGIN_ERROR_MESSAGE = 'Invalid login, please try again'
+    EMPTY_USERNAME_MESSAGE = '- Missing username'
+    EMPTY_PASSWORD_MESSAGE = '- Missing password'
+    EMPTY_EMAIL_MESSAGE = '- Missing email address'
+    EMPTY_FIRSTNAME_MESSAGE = '- Missing given name'
+    EMPTY_LASTNAME_MESSAGE = '- Missing surname'
+    LOWERCASE_USERNAME_ERROR_MESSAGE = 'Only lowercase letters allowed'
+    PASSWORD_LESS_THAN_8 = 'Passwords must be at least 8 characters long.'
+    PASSWORD_NOT_A_DIGIT = 'Passwords must have at least 1 digit(s).'
+    PASSWORD_NOT_LOWERCASE = 'Passwords must have at least 1 lower case letter(s).'
+    PASSWORD_NOT_UPPERCASE = 'Passwords must have at least 1 upper case letter(s).'
+    PASSWORD_NOT_A_SPEC_SYMBOL = 'Passwords must have at least 1 non-alphanumeric character(s) such as as *, -, or #.'
