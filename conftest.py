@@ -44,14 +44,14 @@ def user_data(request):
 @pytest.fixture()
 def app(request):
     url = request.config.getoption("--url")
-    headless = request.config.getoption("--headless")
+    # headless = request.config.getoption("--headless")
 
     # Driver's options
     chrome_options = Options()
-    if headless == "false":
-        chrome_options.headless = False
-    else:
-        chrome_options.headless = True
+    # if headless == "false":
+    #     chrome_options.headless = False
+    # else:
+    chrome_options.headless = True
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
     logger.info(f"Start app on {url}")
     app = Application(driver, url)

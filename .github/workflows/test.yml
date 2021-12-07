@@ -16,10 +16,6 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.9.4
-    - name: Run headless test
-      uses: GabrielBB/xvfb-action@v1
-      with:
-        run: npm test
 #    - name: Setup chrome driver (for Selenium)
 #      uses: nanasess/setup-chromedriver@master
     - name: Install dependencies
