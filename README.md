@@ -1,4 +1,3 @@
-[![Test site qacoursemoodle.innopolis.university](https://github.com/AzatAza/moodle_ui_test/actions/workflows/test.yml/badge.svg)](https://github.com/AzatAza/moodle_ui_test/actions/workflows/test.yml)
 # moodle_ui_test
 Selenium/Python
 
